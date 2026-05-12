@@ -8,7 +8,25 @@
 import XCTest
 @testable import TaskExplorer
 
+@MainActor
 final class TaskExplorerTests: XCTestCase {
+    
+    func testFetchTodosSuccess() async {
+        
+        let mockAPI = MockAPIService()
+        
+        mockAPI.todos = [
+            Todo(userId: 1, id: 1, title: "Test", completed: false)
+        ]
+        
+        let repository = TodoRepository(apiService: mockAPI)
+        let viewModel = TodoListViewModel(repository: repository)
+        
+        await viewModel.fetchTodos()
+        
+        XCTAssertEqual(viewModel.todos.count, 1)
+        XCTAssertEqual(viewModel.todos.first?.title, "Test")
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
