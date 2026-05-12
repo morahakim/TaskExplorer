@@ -102,6 +102,6 @@ Code generated or suggested by AI was reviewed, adjusted, and integrated selecti
 
 4. Limitations & Corrections Applied
 Several AI-generated suggestions required refinement before integration:
-simplifying overengineered approaches that were unnecessary for the project scope
-improving state update flow for cleaner MVVM separation
-refining UI spacing, hierarchy, and component composition
+- simplifying overengineered approaches that were unnecessary for the project scope
+- improving state update flow for cleaner MVVM separation
+- refining UI spacing, hierarchy, and component composition
